@@ -10,7 +10,6 @@ public class Main {
 	
 	public static void main(String[] args) {
 		
-		Object obj = new Object();
 		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
 		try {
 			
@@ -19,13 +18,8 @@ public class Main {
 			
 			MyComponent myComponent = context.getBean(MyComponent.class);
 			System.out.println("MyComponent.componentProperty = " + myComponent.componentProperty);
+			System.out.println("MyComponent.componentBoolean = " + myComponent.componentBoolean);
 			
-			synchronized (obj) {
-				obj.wait();
-			}
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
 		} finally {
 			context.close();
 		}

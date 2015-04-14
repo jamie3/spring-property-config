@@ -9,5 +9,6 @@ public class MyComponent {
 	@Value("${componentProperty}")
 	String componentProperty;
 	
-	
+	@Value("${componentBoolean}")
+	boolean componentBoolean;
 }
